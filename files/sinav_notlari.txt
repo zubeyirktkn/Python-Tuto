@@ -1,0 +1,6 @@
+Zübeyir Aktekin:50,90,100
+Furkan Bacın:40,100,100
+Şükrü Sonar:100,100,100
+Kenan İsmayil:40,50,60
+kenan ismayil ismayil:10,20,30
+zübeyir aktekin:100,80,60

@@ -1,0 +1,46 @@
+
+<!-- saved from url=(0097)http://ceng2.ktu.edu.tr/~cmyilmaz/Bilgisayar%20Grafikleri%20Lab./1.%20Canvas%20API/deney_uyg.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>HTML Canvas Elementi</title>
+  
+</head>
+<body style="">
+  <canvas id="canvas" width="600" height="500">
+        Tarayıcı canvas elementini desteklemiyor.
+  </canvas>
+  <script type="text/javascript">
+        var canvas = document.getElementById("canvas");
+        var icrk = canvas.getContext("2d");
+
+        // yüz 
+        icrk.beginPath();
+        icrk.arc(300, 300, 50, 0, 2 * Math.PI, false);
+        icrk.lineWidth = 5;
+        icrk.stroke();
+        
+        // ten rengi
+        var circle = new Path2D();
+        circle.arc(300, 300, 50, 0, 2 * Math.PI);
+        icrk.fillStyle="#FFDABE"
+        icrk.fill(circle);
+
+        // gözler
+        icrk.beginPath();
+        icrk.arc(285, 280, 10, 0, 2 * Math.PI, false);
+        icrk.arc(315, 280, 10, 0, 2 * Math.PI, false);
+        icrk.fillStyle="#340FAB"
+        icrk.fill();
+
+        //burun
+        icrk.beginPath();
+        icrk.arc(300, 300, 5, 0, 2 * Math.PI, false);
+        icrk.fillStyle="#e74c3c"
+        icrk.fill();
+
+        // ağız
+        icrk.beginPath();
+        icrk.arc(300, 310, 20, 0, Math.PI, false);
+        icrk.stroke();
+  </script>
+
+</body></html>
