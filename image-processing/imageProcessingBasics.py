@@ -1,5 +1,7 @@
 import cv2
 from cv2 import imread
+from cv2 import imshow
+from matplotlib.image import imsave
 import numpy as np
 
 """
@@ -39,9 +41,8 @@ cv2.imshow("joker",img)
 #cv2.imwrite("jokerCensored.jpg",img)
 """
 #----------------------------------------------------------
-
 """
-#lesson3 effecting
+#lesson4 effecting
 img=cv2.imread("joker.jpg")
 
 #img[:,:,2]=154
@@ -68,7 +69,6 @@ cv2.imshow("jokerEye",img)
 #----------------------------------------------------------
 
 """
-
 #reflecting replicating etc.
 img=cv2.imread("joker.jpg")
 imgMirrored=cv2.copyMakeBorder(img,400,0,0,0,cv2.BORDER_REFLECT)
@@ -116,12 +116,45 @@ sumWeighted=cv2.addWeighted(img2,0.3,img,0.7,0)
 cv2.imshow("",sumWeighted)
 """
 #----------------------------------------------------------
-
+"""
+#making image gray
 img=imread("joker2.jpg")
 
 imgGray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 
 cv2.imshow("",imgGray)
+"""
+#----------------------------------------------------------
+"""
+#image scaling 2xUp n down
+img=imread("joker.jpg")
+
+img2xBigger=cv2.pyrUp(img)
+img2xSmaller=cv2.pyrDown(img)
+
+cv2.imshow("Original image",img)
+#cv2.imshow("2x Bigger image",img2xBigger)
+cv2.imshow("2x Smaller image",img2xSmaller)
+
+print(img.shape)
+print(img2xBigger.shape)
+print(img2xSmaller.shape)
+"""
+#----------------------------------------------------------
+"""
+#resizing img freely
+img=cv2.imread("joker.jpg")
+imgRszd=cv2.resize(img,(300,300))
+cv2.imwrite("joker300x300.jpg",imgRszd)
+
+cv2.imshow("",img)
+cv2.imshow("",imgRszd)
+"""
+#----------------------------------------------------------
+
+img=np.zeros((300,300,3),dtype="uint8")
+print(img)
+
 
 cv2.waitKey(0)#waits for pressing a button
 cv2.destroyAllWindows()
