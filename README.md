@@ -1,3 +1,3 @@
 # Python-Tutorial
 
-Stuff when I was learning python
+Stuff when I learn python
