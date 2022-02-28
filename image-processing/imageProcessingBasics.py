@@ -151,9 +151,27 @@ cv2.imshow("",img)
 cv2.imshow("",imgRszd)
 """
 #----------------------------------------------------------
-
+"""
+#numpy zeros func
 img=np.zeros((300,300,3),dtype="uint8")
 print(img)
+"""
+#----------------------------------------------------------
+"""
+#live camera view
+camera=cv2.VideoCapture(0)#0=device camera
+
+while True:
+    isCameraOn,frame=camera.read()
+
+    cv2.imshow("Device Camera",frame)
+
+    if cv2.waitKey(30) & 0xFF == ('q'):#0xFF means quiting
+        break
+
+camera.release()
+cv2.destroyAllWindows()
+"""
 
 
 cv2.waitKey(0)#waits for pressing a button
